@@ -19,7 +19,7 @@ public class InternationalizationApplication implements WebMvcConfigurer {
 	}
 	@Bean
 	public LocaleResolver localeResolver() {
-		System.out.println("local");
+		
 		SessionLocaleResolver resolver =new SessionLocaleResolver();
 		resolver.setDefaultLocale(Locale.US);
 		return resolver;
@@ -27,7 +27,7 @@ public class InternationalizationApplication implements WebMvcConfigurer {
 	}
 	@Bean
 	public LocaleChangeInterceptor localeChangeInterceptor() {
-		System.out.println("locale");
+		
 		LocaleChangeInterceptor inter=new LocaleChangeInterceptor();
 		inter.setParamName("lang");
 		return inter;
@@ -36,7 +36,7 @@ public class InternationalizationApplication implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry register) {
-		System.out.println("register");
+		
 		register.addInterceptor(localeChangeInterceptor());
 	}
 }
